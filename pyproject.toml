@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ups-digital-twin"
+version = "0.1.0"
+description = "Telemetry-driven digital twin starter for APC Smart-UPS SUA1000I-IN"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.2",
+  "numpy>=1.26",
+  "scikit-learn>=1.4",
+  "streamlit>=1.36",
+  "plotly>=5.22",
+  "openpyxl>=3.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
