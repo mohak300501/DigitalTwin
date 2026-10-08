@@ -33,7 +33,10 @@ def load_telemetry(path: str | Path) -> tuple[pd.DataFrame, list[str]]:
     and keep the raw Date column untouched rather than silently rewriting the source.
     """
     path = Path(path)
-    df = pd.read_excel(path)
+    if path.suffix.lower() == '.csv':
+        df = pd.read_csv(path)
+    else:
+        df = pd.read_excel(path)
     warnings_out: list[str] = []
 
     missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]

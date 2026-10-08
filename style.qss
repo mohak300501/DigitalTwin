@@ -1,0 +1,81 @@
+QWidget {
+    font-family: "Segoe UI", "MS Reference Sans Serif", Arial, sans-serif;
+    font-size: 14px;
+    background: #f4f6f9; 
+    color: #333;
+}
+
+QGroupBox {
+    color: #2E5C9A;
+    font-weight: bold;
+    border: 1px solid #c0c6d3;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 15px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 10px;
+    padding: 0 3px;
+}
+
+#headerTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a365d;
+}
+
+#infoLabel {
+    font-size: 16px;
+    color: #2c5282;
+    padding: 10px;
+    background: #ebf8ff;
+    border-left: 4px solid #3182ce;
+}
+
+#resultLabel {
+    font-size: 14px;
+    font-weight: bold;
+    color: #c53030;
+}
+
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #5B8DF6, stop:0.5 #357ABD, stop:1 #2851A3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+}
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #6CA6FF, stop:0.5 #4A90E2, stop:1 #2E5C9A);
+}
+
+QTabWidget::pane {
+    border: 1px solid #c0c6d3;
+    border-radius: 4px;
+    background: white;
+}
+
+QTabBar::tab {
+    background: #e0e3ea;
+    border: 1px solid #c0c6d3;
+    border-bottom-color: #c0c6d3;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 8px 16px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background: white;
+    border-bottom-color: white;
+    font-weight: bold;
+}
+
+QTabBar::tab:hover:!selected {
+    background: #ebf8ff;
+}

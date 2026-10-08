@@ -86,3 +86,43 @@ State estimator / digital twin
 ```
 
 The important design choice is to keep the physics/engineering state model separate from ML. That lets the twin remain interpretable even before enough labeled maintenance data exists.
+
+
+## Usage of executable app
+
+### Try a Compiled App
+Check the `dist` directory for a pre-built executable for your operating system. Simply run the executable to launch the app.
+
+> **Note:** To run the compiled executable successfully, you must keep the following files and directories in the same folder as the executable:
+> - `ups_telemetry.csv` or `ups_telemetry.xlsx`
+> - `DRDO-logo.png` (for the logo)
+> - `style.qss` (for the UI styling)
+
+### If No Compiled App Works
+If you cannot run any of the provided executables, you can build your own:
+
+1. **Create a virtual environment and install dependencies:**
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   pip install pyinstaller
+   ```
+2. **Build the app for your OS:**
+   ```bash
+   pyinstaller --onefile --windowed --icon=DRDO-logo.png pyqt_app.py
+   ```
+   The executable will be created in the `dist` directory.
+
+3. **Run the app:**
+   Move the generated executable from `dist/` to your project root (or copy the required assets to `dist/`), and run it:
+   ```bash
+   ./pyqt_app  # or pyqt_app.exe on Windows
+   ```
+   > **Note:** Make sure `ups_telemetry.csv`, `DRDO-logo.png`, and `style.qss` are in the same folder as the executable.
+
+## Author
+```
+Author: Mohak Ketan Patil
+GitHub: mohak300501
+```

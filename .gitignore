@@ -3,3 +3,6 @@ files/
 __pycache__/
 *.pyc
 .streamlit/
+build/
+dist/
+*.spec
