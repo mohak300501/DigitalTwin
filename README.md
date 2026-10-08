@@ -94,9 +94,9 @@ The important design choice is to keep the physics/engineering state model separ
 Check the `dist` directory for a pre-built executable for your operating system. Simply run the executable to launch the app.
 
 > **Note:** To run the compiled executable successfully, you must keep the following files and directories in the same folder as the executable:
-> - `ups_telemetry.csv` or `ups_telemetry.xlsx`
-> - `DRDO-logo.png` (for the logo)
-> - `style.qss` (for the UI styling)
+> - `ups_telemetry.csv`
+> - `DRDO-logo.png`
+> - `style.qss`
 
 ### If No Compiled App Works
 If you cannot run any of the provided executables, you can build your own:
@@ -110,14 +110,15 @@ If you cannot run any of the provided executables, you can build your own:
    ```
 2. **Build the app for your OS:**
    ```bash
-   pyinstaller --onefile --windowed --icon=DRDO-logo.png pyqt_app.py
+   pyinstaller --clean --onefile --windowed --paths=src --icon=DRDO-logo.png -n "DigitalTwin" pyqt_app.py   # Linux
+   pyinstaller --clean --onefile --windowed --paths=src --icon=DRDO-logo.ico -n "DigitalTwin" pyqt_app.py   # Windows
    ```
    The executable will be created in the `dist` directory.
 
 3. **Run the app:**
    Move the generated executable from `dist/` to your project root (or copy the required assets to `dist/`), and run it:
    ```bash
-   ./pyqt_app  # or pyqt_app.exe on Windows
+   ./DigitalTwin  # or DigitalTwin.exe on Windows
    ```
    > **Note:** Make sure `ups_telemetry.csv`, `DRDO-logo.png`, and `style.qss` are in the same folder as the executable.
 
