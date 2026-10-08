@@ -12,8 +12,16 @@ from PyQt6.QtGui import QIcon, QFont
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT / "src"))
+if getattr(sys, "frozen", False):
+    # Running as a PyInstaller executable
+    ROOT = Path(sys.executable).resolve().parent
+else:
+    # Running normally with Python
+    ROOT = Path(__file__).resolve().parent
+
+# Source path is needed only when running from source
+if not getattr(sys, "frozen", False):
+    sys.path.insert(0, str(ROOT / "src"))
 
 from ups_twin import DigitalTwin, TwinConfig, load_telemetry, assess_health
 
